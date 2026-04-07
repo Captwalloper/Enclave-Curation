@@ -1,0 +1,125 @@
+namespace = enclave_curation
+
+@invite_enclave_opinion_threshold = 50
+
+country_event = {
+    id = enclave_curation.100
+    title = "enclave_option_TITLE"
+    desc = "enclave_option_DESC"
+    picture = GFX_enclave_station_placeholder_build_icon
+
+    is_triggered_only = yes
+
+    immediate = {
+        refresh_enclave_options = yes
+        root = { 
+            save_event_target_as = target_enclave # default to refresh pass
+            if = { # default page_index to 0
+                limit = { NOT = {  is_variable_set = page_index } } 
+                set_variable = { which = page_index value = 0 }
+            }
+        }
+    }
+
+    option = {
+        name = "enclave_option_nvm"
+        default_hide_option = yes
+        if = { # invite enclave cancelled, so remove placeholder
+            limit = { exists = event_target:target_enclave_site }
+            remove_megastructure = event_target:target_enclave_site
+        }
+    }
+    option = {
+        name = "enclave_option_1"
+        trigger = { NOT = { event_target:enclave_1 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_1 } }
+        event_target:enclave_1 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "enclave_option_2"
+        trigger = { NOT = { event_target:enclave_2 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_2 } }
+        event_target:enclave_2 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "enclave_option_3"
+        trigger = { NOT = { event_target:enclave_3 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_3 } }
+        event_target:enclave_3 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "enclave_option_4"
+        trigger = { NOT = { event_target:enclave_4 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_4 } }
+        event_target:enclave_4 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "enclave_option_5"
+        trigger = { NOT = { event_target:enclave_5 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_5 } }
+        event_target:enclave_5 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "enclave_option_6"
+        trigger = { NOT = { event_target:enclave_6 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_6 } }
+        event_target:enclave_6 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "enclave_option_7"
+        trigger = { NOT = { event_target:enclave_7 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_7 } }
+        event_target:enclave_7 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "enclave_option_8"
+        trigger = { NOT = { event_target:enclave_8 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_8 } }
+        event_target:enclave_8 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "enclave_option_9"
+        trigger = { NOT = { event_target:enclave_9 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_9 } }
+        event_target:enclave_9 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "enclave_option_10"
+        trigger = { NOT = { event_target:enclave_10 = { is_same_value = root } } }
+        allow = { can_select_enclave_option = { enclave = enclave_10 } }
+        event_target:enclave_10 = { save_event_target_as = target_enclave }
+    }
+    option = {
+        name = "prev_page"
+        trigger = { root = { check_variable = { which = page_index value > 0 } } }
+        root = { change_variable = { which = page_index value = -1 } }
+        country_event = { id = enclave_curation.100 }
+    }
+    option = {
+        name = "next_page"
+        trigger = { NOT = { event_target:enclave_11 = { is_same_value = root } } }
+        root = { change_variable = { which = page_index value = 1 } }
+        country_event = { id = enclave_curation.100 }
+    }
+    option = {
+        name = "enclave_refresh"
+        custom_tooltip = "enclave_refresh_TOOLTIP"
+        country_event = { id = enclave_curation.100 }
+    }
+
+    after = {
+        if = { # enclave selected, so not a refresh/paging pass
+            limit = { NOT = { event_target:target_enclave = { is_same_value = root } } }
+
+            if = {
+                limit = { exists = event_target:target_enclave_site }
+                invite_enclave = yes
+            }
+            else_if = {
+                limit = { exists = event_target:target_enclave_system }
+                evict_enclave = yes
+            }
+            root = { clear_variable = page_index }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+enclave_station_placeholder = {
+  entity = "construction_platform_entity"
+  construction_entity = "construction_platform_entity"
+  portrait = "GFX_megastructure_construction_background"
+  show_in_outliner = no
+  
+  build_type = inside_gravity_well
+  build_time = 1
+  
+  potential = {
+    this = { is_ai = no } # TODO: players only... at least until I put costs in place
+  }
+  on_build_complete = {
+    fromfrom = { save_event_target_as = target_enclave_site }
+    from = { country_event = { id = enclave_curation.100 } } 
+  }
+}

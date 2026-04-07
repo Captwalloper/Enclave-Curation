@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_enclave_station_placeholder_build_icon"
+		texturefile = "gfx/interface/icons/message/message_enclave_diplomatic_interactions.dds"
+	}
+}

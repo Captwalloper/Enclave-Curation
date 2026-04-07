@@ -1,0 +1,5 @@
+trigger = { solar_sytem = { check_variable = { which = invited_enclave_count value > 0 } } }
+
+add_trust 34 0 50
+
+effect = { give_technology = { tech = TECH message = yes } }

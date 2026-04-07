@@ -1,0 +1,14 @@
+@min_opinion_to_invite_enclave = 50
+@max_invited_outposts_per_enclave_per_player = 1
+
+can_select_enclave_option = {
+	event_target:$enclave$ = {
+		has_communications = root
+		opinion = { who = root value >= @min_opinion_to_invite_enclave }
+		# count_owned_fleet here causes "Script Error: Invalid context switch" in error.log, and I don't see a way around it. Still works tho. Stupid parser...
+		count_owned_fleet = {
+			limit = { space_owner = { is_country = root } }
+			count <= @max_invited_outposts_per_enclave_per_player
+		}
+	}
+}

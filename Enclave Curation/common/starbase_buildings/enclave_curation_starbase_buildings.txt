@@ -1,0 +1,24 @@
+enclave_trading_company = {
+	icon = "GFX_starbase_offworld_trading_company"
+	construction_days = 1 # balance
+
+	potential = {
+		exists = owner
+		owner = {
+			is_ai = no # maybe allow?
+		}
+		is_normal_starbase = yes
+		solar_system = { check_variable = { which = invited_enclave_count value > 0 } }
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 50 # balance
+		}
+		produces = {
+			trade = 10
+			mult = solar_system.invited_enclave_count
+		}
+	}
+}

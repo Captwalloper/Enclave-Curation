@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": ".",
+		},
+		{
+			"path": "../../Paradox Interactive/Stellaris/mod"
+		},
+		{
+			"path": "../../Paradox Interactive/Stellaris/logs"
+		},
+		{
+			"path": "../../../../../Program Files (x86)/Steam/steamapps/common/Stellaris"
+		},
+		{
+			"path": "../../../../../Program Files (x86)/Steam/steamapps/workshop/content/281990/2962241488"
+		},
+		{
+			"path": "../../../../../Program Files (x86)/Steam/steamapps/workshop/content/281990/3214407126"
+		}
+	],
+	"extensions": {
+    "recommendations": [
+      "tboby.cwtools-vscode",
+    ]
+  },
+	"settings": {}
+}

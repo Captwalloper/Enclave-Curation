@@ -1,0 +1,125 @@
+refresh_enclave_options = {
+	root = { 
+		# slot_index = -1 * page_size * page_index
+		# so that for page 0 (first) slot_index begins at 0 and is immediately bumped to 1
+		# and for page 1 slow_index begins at -page_size (-10) and is immediately bumped to -9
+		## -9 -> 0 are all ignored by the first if-guard, and the 2nd page_size (10) enclaves are slotted
+		if = { # default page_index to 0
+			limit = { NOT = {  is_variable_set = page_index } } 
+			set_variable = { which = page_index value = 0 }
+		}
+		set_variable = { which = slot_index value = -10 } # -page_size
+		multiply_variable = { which = slot_index value = page_index }
+		# Scope to root (the player) and save that as every slot as default
+		save_event_target_as = enclave_1
+		save_event_target_as = enclave_2
+		save_event_target_as = enclave_3
+		save_event_target_as = enclave_4
+		save_event_target_as = enclave_5
+		save_event_target_as = enclave_6
+		save_event_target_as = enclave_7
+		save_event_target_as = enclave_8
+		save_event_target_as = enclave_9
+		save_event_target_as = enclave_10
+		save_event_target_as = enclave_11
+	}
+	every_country = {
+		# first 10 enclaves
+		limit = {
+			is_country_type = enclave
+			root = { check_variable = { which = slot_index value < 11 } } # page_size + 1
+		}
+		# slot_index++
+		root = { change_variable = { which = slot_index value = 1 } }
+		# fill 10 enclave slots
+		if = {
+			limit = { root = { check_variable = { which = slot_index value < 1 } } }
+			root = { change_variable = { which = slot_index value = 0 } } # no-op
+		}
+		else_if = {
+			limit = { event_target:enclave_1 = { is_same_value = root }  } 
+			save_event_target_as = enclave_1
+		}
+		else_if = {
+			limit = { event_target:enclave_2 = { is_same_value = root }  }
+			save_event_target_as = enclave_2
+		}
+		else_if = {
+			limit = { event_target:enclave_3 = { is_same_value = root }  }
+			save_event_target_as = enclave_3
+		}
+		else_if = {
+			limit = { event_target:enclave_4 = { is_same_value = root }  }
+			save_event_target_as = enclave_4
+		}
+		else_if = {
+			limit = { event_target:enclave_5 = { is_same_value = root }  }
+			save_event_target_as = enclave_5
+		}
+		else_if = {
+			limit = { event_target:enclave_6 = { is_same_value = root }  }
+			save_event_target_as = enclave_6
+		}
+		else_if = {
+			limit = { event_target:enclave_7 = { is_same_value = root }  }
+			save_event_target_as = enclave_7
+		}
+		else_if = {
+			limit = { event_target:enclave_8 = { is_same_value = root }  }
+			save_event_target_as = enclave_8
+		}
+		else_if = {
+			limit = { event_target:enclave_9 = { is_same_value = root }  }
+			save_event_target_as = enclave_9
+		}
+		else_if = {
+			limit = { event_target:enclave_10 = { is_same_value = root }  }
+			save_event_target_as = enclave_10
+		}
+		else_if = { # for detecting if next page needed
+			limit = { event_target:enclave_11 = { is_same_value = root }  }
+			save_event_target_as = enclave_11
+		}
+	}
+	root = { clear_variable = slot_index }
+}
+
+invite_enclave = {
+	# swap site with enclave
+	event_target:target_enclave = {
+			create_fleet = {
+					name = "invited_enclave"
+					settings = { spawn_debris = no }
+					effect = {
+							set_owner = event_target:target_enclave 
+							create_ship = {
+									name = random
+									design = "NAME_Trader_Enclave_Station"
+									graphical_culture = root
+							}							
+							set_location = event_target:target_enclave_site
+					}
+			}
+	}
+	event_target:target_enclave_site = {
+		remove_megastructure = this
+		solar_system = { 
+			if = { 
+				limit = { NOT = { is_variable_set = invited_enclave_count } }
+				set_variable = { which = invited_enclave_count value = 0 }
+			}
+			change_variable = { which = invited_enclave_count value = 1 }
+		}
+	}
+}
+
+evict_enclave = {
+	# remove any enclave in system
+	event_target:target_enclave_system = {
+		every_fleet_in_system = {
+			limit = { owner = { is_same_value = event_target:target_enclave } }
+			delete_fleet = this
+			solar_system = { subtract_variable = { which = invited_enclave_count value = 1 } }
+		}
+	}
+}
