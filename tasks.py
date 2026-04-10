@@ -47,6 +47,7 @@ def zip(c: Context):
 def stash(c: Context):
     """Overwrite mod folder with the contents of the deployed mod folder"""
     overwrite_folder(DEPLOYED_MOD_DIR, REPO_MOD_DIR)
+    # shutil.copy2(DEPLOYED_MOD_DIR)
 
 @task 
 def stashz(c: Context):

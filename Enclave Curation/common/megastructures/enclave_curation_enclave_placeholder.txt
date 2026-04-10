@@ -8,7 +8,7 @@ enclave_station_placeholder = {
   build_time = 1
   
   potential = {
-    this = { is_ai = no } # TODO: players only... at least until I put costs in place
+    this = { is_ai = no }
   }
   on_build_complete = {
     fromfrom = { save_event_target_as = target_enclave_site }

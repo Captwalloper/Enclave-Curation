@@ -1,7 +1,5 @@
 namespace = enclave_curation
 
-@invite_enclave_opinion_threshold = 50
-
 country_event = {
     id = enclave_curation.100
     title = "enclave_option_TITLE"

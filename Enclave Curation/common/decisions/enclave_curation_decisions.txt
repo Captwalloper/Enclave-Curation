@@ -1,7 +1,6 @@
-#General Decision (to avoid clutter)
 decision_evict_enclave = {
 	sound = event_administrative_work
-	icon = decision_deal
+	icon = decision_art_monument
 	
 	resources = {
 		category = decisions
@@ -11,7 +10,7 @@ decision_evict_enclave = {
 	}
 	
 	potential = {
-		this.solar_system = {
+		solar_system = {
 			owner = { is_ai = no }
 			is_variable_set = invited_enclave_count
 			check_variable = { which = invited_enclave_count value > 0 }
@@ -20,6 +19,6 @@ decision_evict_enclave = {
 	
 	effect = {
 		solar_system = { save_event_target_as = target_enclave_system }
-    from = { country_event = { id = enclave_curation.100 } } 
+    owner = { country_event = { id = enclave_curation.100 } } 
 	}
 }

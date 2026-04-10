@@ -1,4 +1,4 @@
-planet_evict_enclave = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_luxuries.dds"
-	icon_frame = 1
-}
+# planet_evict_enclave = {
+# 	icon = "gfx/interface/icons/planet_modifiers/pm_luxuries.dds"
+# 	icon_frame = 1
+# }
