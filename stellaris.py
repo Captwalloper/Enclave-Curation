@@ -36,7 +36,7 @@ async def launch_resume():
     resume_button.click_input()
     return not resume_button.is_active()
   if not await _succeed_before_timeout(click_resume_button, 10):
-    print("Resume button wasn't clickable... WTF")
+    print("Resume button wasn't clickable... WAT")
     return
 
 async def _succeed_before_timeout(condition: Callable[[], bool], timeout: int = 10) -> bool:

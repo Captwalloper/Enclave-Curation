@@ -1,14 +1,14 @@
-# Untitled Stellaris Mod (probably Enclave stuff)
+# Enclave Curation
 
 ## Steam Workshop Mod for Stellaris
 
-[![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)](https://steamcommunity.com/workshop/filedetails/)
+[Steam Workshop Page ![version](https://img.shields.io/badge/version-1.0.0-orange.svg)](https://steamcommunity.com/sharedfiles/filedetails/?id=3705694728)
 
 ---
 
 ## Description
 
-**Enclave Overhaul** extends the existing enclave system, enabling players to add, move, and remove enclaves from their systems in a balanced, lore friendly way. Just like Grand Archive allows players to interact with and curate wild space wildlife, Enclave curation empowers players to  collect and manage enclaves.
+**Enclave Curation** extends the existing enclave system, enabling players to add, move, and remove enclaves from their systems in a balanced, lore friendly way. Just like Grand Archive allows players to interact with and curate wild space wildlife, Enclave curation empowers players to  collect and manage enclaves.
 
 ---
 
@@ -60,4 +60,4 @@ I wrote some auxillary scripts to aid development.
 2. In commandline, run `pip install -r requirements.txt` (or just `invoke restore` after this)
 3. `inv --list` (`inv` is shorter alias for invoke)
 
-And ya, I deliberately committed a zip of the mod. My mercy for any goofy goobers who somehow find the git page and can't figure out how to download the repo xD.
+And ya, I deliberately committed a zip of the mod. My mercy for any goofy goobers who somehow find the github page and can't figure out how to download the repo xD.

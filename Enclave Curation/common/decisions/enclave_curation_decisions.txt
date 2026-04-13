@@ -5,20 +5,25 @@ decision_evict_enclave = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			influence = 50 # refunded if event cancelled
 		}
 	}
 	
 	potential = {
 		solar_system = {
-			owner = { is_ai = no }
+			from = { is_ai = no }
 			is_variable_set = invited_enclave_count
 			check_variable = { which = invited_enclave_count value > 0 }
+		}
+		OR = {
+			is_star = yes
+			is_planet_class = pc_black_hole
+			is_colony = yes
 		}
 	}
 	
 	effect = {
 		solar_system = { save_event_target_as = target_enclave_system }
-    owner = { country_event = { id = enclave_curation.100 } } 
+    from = { country_event = { id = enclave_curation.101 } } 
 	}
 }

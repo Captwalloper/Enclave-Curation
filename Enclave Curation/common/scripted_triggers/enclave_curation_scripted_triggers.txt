@@ -1,30 +1,27 @@
-@min_opinion_to_invite_enclave = 50
-@max_invited_outposts_per_enclave_per_player = 1
-
-can_select_enclave_option = {
+can_invite_enclave = {
 	event_target:$enclave$ = {
 		has_communications = root
-		OR = {
-			AND = {
-				exists = event_target:target_enclave_system
-				count_owned_fleet = {
-					limit = { 
-						exists = space_owner
-						root = { is_country = space_owner }
-					}
-					count > 0
-				}
+		opinion = { who = root value >= 50 }
+		count_owned_fleet = {
+			limit = { 
+				exists = space_owner
+				root = { is_country = space_owner }
 			}
-			AND = {
-				opinion = { who = root value >= @min_opinion_to_invite_enclave }
-				count_owned_fleet = {
-					limit = { 
-						exists = space_owner
-						root = { is_country = space_owner }
-					}
-					count < @max_invited_outposts_per_enclave_per_player
-				}
+			count < 1
+		}
+	}
+}
+
+can_evict_enclave = {
+	event_target:$enclave$ = {
+		has_communications = root
+		exists = event_target:target_enclave_system
+		count_owned_fleet = {
+			limit = { 
+				exists = space_owner
+				root = { is_country = space_owner }
 			}
+			count > 0
 		}
 	}
 }
