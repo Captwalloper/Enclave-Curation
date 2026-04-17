@@ -32,6 +32,12 @@
 
 ---
 
+## Special Thanks
+
+- [The Wandering Modder](https://steamcommunity.com/profiles/76561199176552109/myworkshopfiles/), for experienced advice and review.
+
+---
+
 ## Installation
 
 ### Via Steam Workshop
