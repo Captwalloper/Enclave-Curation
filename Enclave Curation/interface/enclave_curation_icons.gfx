@@ -1,6 +1,18 @@
 spriteTypes = {
 	spriteType = {
 		name = "GFX_enclave_station_placeholder_build_icon"
-		texturefile = "gfx/interface/icons/message/message_enclave_diplomatic_interactions.dds"
+		texturefile = "gfx/interface/icons/megastructures/build_menu_orbital_enclave.dds"
+	}
+	spriteType = {
+		name = "GFX_event_invite_enclave"
+		texturefile = "gfx/interface/icons/megastructures/build_menu_orbital_enclave.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_evict_enclave"
+    texturefile = "gfx/interface/icons/decisions/decision_remove_enclave.dds"
+	}
+	spriteType = {
+		name = "GFX_event_evict_enclave"
+    texturefile = "gfx/interface/icons/decisions/decision_remove_enclave.dds"
 	}
 }

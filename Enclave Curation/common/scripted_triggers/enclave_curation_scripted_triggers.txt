@@ -6,6 +6,7 @@ can_invite_enclave = {
 			limit = { 
 				exists = space_owner
 				root = { is_country = space_owner }
+				has_fleet_flag = invited_enclave_outpost
 			}
 			count < 1
 		}

@@ -1,7 +1,7 @@
 enclave_station_placeholder = {
   entity = "construction_platform_entity"
   construction_entity = "construction_platform_entity"
-  portrait = "GFX_megastructure_construction_background"
+  portrait = GFX_enclave_station_placeholder_build_icon
   show_in_outliner = no
   
   build_type = inside_gravity_well

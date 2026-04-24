@@ -98,6 +98,7 @@ invite_enclave = {
 									graphical_culture = root
 							}							
 							set_location = event_target:target_enclave_site
+							set_fleet_flag = invited_enclave_outpost
 					}
 			}
 	}

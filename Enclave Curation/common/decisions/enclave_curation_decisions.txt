@@ -1,6 +1,6 @@
 decision_evict_enclave = {
 	sound = event_administrative_work
-	icon = decision_art_monument
+	icon = decision_remove_enclave
 	
 	resources = {
 		category = decisions

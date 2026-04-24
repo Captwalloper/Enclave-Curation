@@ -4,7 +4,7 @@ country_event = {
     id = enclave_curation.100
     title = "invite_enclave_TITLE"
     desc = "invite_enclave_DESC"
-    picture = GFX_enclave_station_placeholder_build_icon
+    picture = GFX_event_invite_enclave
 
     is_triggered_only = yes
 
@@ -116,7 +116,7 @@ country_event = {
     id = enclave_curation.101
     title = "evict_enclave_TITLE"
     desc = "evict_enclave_DESC"
-    picture = GFX_enclave_station_placeholder_build_icon
+    picture = GFX_event_evict_enclave
 
     is_triggered_only = yes
 
