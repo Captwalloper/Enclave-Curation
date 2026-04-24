@@ -35,6 +35,7 @@
 ## Special Thanks
 
 - [The Wandering Modder](https://steamcommunity.com/profiles/76561199176552109/myworkshopfiles/), for experienced advice and review.
+- [RustyDios](https://steamcommunity.com/profiles/76561198054604515/myworkshopfiles/?appid=281990), for contributing icons.
 
 ---
 
