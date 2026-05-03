@@ -1,15 +1,14 @@
 ﻿l_english:
+ # Megastructure
  enclave_station_placeholder: "Invited Enclave Build Site"
  enclave_station_placeholder_DESC: "An invited enclave station placeholder."
  enclave_station_placeholder_MEGASTRUCTURE_DETAILS: "A build site marking where an invited enclave faction will construct its outpost."
- enclave_refresh: "Refresh List"
- enclave_refresh_TOOLTIP: "Refresh list of enclave options,"
- invite_enclave_TITLE: "Select enclave to invite"
- invite_enclave_DESC: "Select which enclave faction is invited to build an outpost here."
- evict_enclave_TITLE: "Select enclave to evict"
- evict_enclave_DESC: "Evict selected enclave faction from system."
- nevermind: "Nevermind"
+ MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_INSIDE_GRAVITY_WELL: "Must be built inside a system's gravity well."
+ # Fleet/Ship (Station)
  invited_enclave: "Invited Enclave"
+ invited_enclave_outpost: "Invited Enclave Outpost"
+ # Event Menu - Shared
+ enclave_option_none: "(I should establish comms with an enclave first...)"
  enclave_option_1: "[enclave_1.GetName]"
  enclave_option_2: "[enclave_2.GetName]"
  enclave_option_3: "[enclave_3.GetName]"
@@ -20,10 +19,21 @@
  enclave_option_8: "[enclave_8.GetName]"
  enclave_option_9: "[enclave_9.GetName]"
  enclave_option_10: "[enclave_10.GetName]"
- prev_page: "Previous Page"
- next_page: "Next Page"
+ enclave_refresh: "Refresh List"
+ enclave_refresh_TOOLTIP: "Refresh list of enclave options,"
+ prev_page: "$PREV$"
+ next_page: "$NEXT$"
+ nevermind: "Nevermind"
+ # Event - Invite
+ invite_enclave_TITLE: "Select enclave to invite"
+ invite_enclave_DESC: "Select which enclave faction is invited to build an outpost here."
+ # Event - Evict
+ evict_enclave_TITLE: "Select enclave to evict"
+ evict_enclave_DESC: "Evict selected enclave faction from system."
+ # Planetary Decision - Evict
+ planet_evict_enclave: "Evict Enclave"
  decision_evict_enclave: "Evict Enclave"
  decision_evict_enclave_desc: "Evict selected enclave faction from system."
- planet_evict_enclave: "Evict Enclave"
- sm_enclave_trading_company: "Invited Enclave Trading Company"
+ # Starbase Module
+ sm_enclave_trading_company: "Enclave Mutual Exchange"
  sm_enclave_trading_company_desc: "Trades with invited enclaves... or their remnants."

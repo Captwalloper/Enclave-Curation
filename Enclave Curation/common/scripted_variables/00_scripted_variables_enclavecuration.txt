@@ -1,0 +1,7 @@
+# Add global variables here that will be available in all script files.
+# @something = 42
+# They can be overridden in each normal script file.
+
+@curation_enclave_build_time = 20
+@curation_enclave_influence_cost = 20
+@curation_enclave_influence_cost_removal = 20

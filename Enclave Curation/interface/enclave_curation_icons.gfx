@@ -1,18 +1,35 @@
 spriteTypes = {
+	# USED IF YOU CLICK ON THE BUILD SITE
+	spriteType = {
+		name = "GFX_enclave_station_placeholder_enclave_background"
+		textureFile = "gfx/interface/planetview/megastructure_enclave_background.dds"
+	}
+
+	# USED FOR THE MEGASTRUCTURE BUILD MENU
 	spriteType = {
 		name = "GFX_enclave_station_placeholder_build_icon"
-		texturefile = "gfx/interface/icons/megastructures/build_menu_orbital_enclave.dds"
+		texturefile = "gfx/interface/icons/megastructures/megastructures_build_menu/build_menu_orbital_enclave.dds"
 	}
+
+	# USED IN THE EVENT VIEW FOR CREATION
 	spriteType = {
 		name = "GFX_event_invite_enclave"
-		texturefile = "gfx/interface/icons/megastructures/build_menu_orbital_enclave.dds"
+		texturefile = "gfx/event_pictures/curation_build_enclave_event.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaysTransparent = yes
 	}
-	spriteType = {
-		name = "GFX_decision_evict_enclave"
-    texturefile = "gfx/interface/icons/decisions/decision_remove_enclave.dds"
-	}
+
+	# USED IN THE EVENT VIEW FOR DELETION
 	spriteType = {
 		name = "GFX_event_evict_enclave"
-    texturefile = "gfx/interface/icons/decisions/decision_remove_enclave.dds"
+		texturefile = "gfx/event_pictures/curation_evict_enclave_event.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaysTransparent = yes
+	}
+
+	# USED IN PLANET VIEW DECISIONS MENU
+	spriteType = {
+		name = "GFX_decision_evict_enclave"
+		texturefile = "gfx/interface/icons/decisions/decision_remove_enclave.dds"
 	}
 }

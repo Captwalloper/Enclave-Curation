@@ -5,7 +5,7 @@ decision_evict_enclave = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50 # refunded if event cancelled
+			influence = @curation_enclave_influence_cost_removal # refunded if event cancelled
 		}
 	}
 	
@@ -24,6 +24,6 @@ decision_evict_enclave = {
 	
 	effect = {
 		solar_system = { save_event_target_as = target_enclave_system }
-    from = { country_event = { id = enclave_curation.101 } } 
+    	from = { country_event = { id = enclave_curation.101 } } 
 	}
 }
