@@ -1,3 +1,10 @@
+can_see_invite_enclave = {
+	event_target:$enclave$ = {
+		NOT = { is_same_value = root } # slot populated
+		has_communications = root
+	}
+}
+
 can_invite_enclave = {
 	event_target:$enclave$ = {
 		has_communications = root
@@ -15,6 +22,7 @@ can_invite_enclave = {
 
 can_evict_enclave = {
 	event_target:$enclave$ = {
+		NOT = { is_same_value = root } # slot populated
 		has_communications = root
 		exists = event_target:target_enclave_system
 		count_owned_fleet = {

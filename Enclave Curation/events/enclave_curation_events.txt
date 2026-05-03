@@ -24,64 +24,72 @@ country_event = {
         name = "nevermind"
         default_hide_option = yes
         remove_megastructure = event_target:target_enclave_site
+        add_resource = {
+            influence = @curation_enclave_influence_cost # refund cost of construction
+        }
+    }
+    option = {
+        name = "enclave_option_none"
+        trigger = { NOT = { can_see_invite_enclave = { enclave = enclave_1 } } }
+        allow = { hidden_tooltip = { always = no } } # cwtools lies, hidden_tooltip is allowed in option->allow
     }
     option = {
         name = "enclave_option_1"
-        trigger = { NOT = { event_target:enclave_1 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_1 } }
         allow = { can_invite_enclave = { enclave = enclave_1 } }
         event_target:enclave_1 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_2"
-        trigger = { NOT = { event_target:enclave_2 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_2 } }
         allow = { can_invite_enclave = { enclave = enclave_2 } }
         event_target:enclave_2 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_3"
-        trigger = { NOT = { event_target:enclave_3 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_3 } }
         allow = { can_invite_enclave = { enclave = enclave_3 } }
         event_target:enclave_3 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_4"
-        trigger = { NOT = { event_target:enclave_4 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_4 } }
         allow = { can_invite_enclave = { enclave = enclave_4 } }
         event_target:enclave_4 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_5"
-        trigger = { NOT = { event_target:enclave_5 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_5 } }
         allow = { can_invite_enclave = { enclave = enclave_5 } }
         event_target:enclave_5 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_6"
-        trigger = { NOT = { event_target:enclave_6 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_6 } }
         allow = { can_invite_enclave = { enclave = enclave_6 } }
         event_target:enclave_6 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_7"
-        trigger = { NOT = { event_target:enclave_7 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_7 } }
         allow = { can_invite_enclave = { enclave = enclave_7 } }
         event_target:enclave_7 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_8"
-        trigger = { NOT = { event_target:enclave_8 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_8 } }
         allow = { can_invite_enclave = { enclave = enclave_8 } }
         event_target:enclave_8 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_9"
-        trigger = { NOT = { event_target:enclave_9 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_9 } }
         allow = { can_invite_enclave = { enclave = enclave_9 } }
         event_target:enclave_9 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_10"
-        trigger = { NOT = { event_target:enclave_10 = { is_same_value = root } } }
+        trigger = { can_see_invite_enclave = { enclave = enclave_10 } }
         allow = { can_invite_enclave = { enclave = enclave_10 } }
         event_target:enclave_10 = { save_event_target_as = target_enclave }
     }
@@ -136,87 +144,57 @@ country_event = {
         name = "nevermind"
         default_hide_option = yes
         add_resource = {
-            influence = 50 # refund cost of decision
+            influence = @curation_enclave_influence_cost_removal # refund cost of decision
         }
     }
     option = {
         name = "enclave_option_1"
-        trigger = { 
-            NOT = { event_target:enclave_1 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_1 }
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_1 } }
         event_target:enclave_1 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_2"
-        trigger = { 
-            NOT = { event_target:enclave_2 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_2 }
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_2 } }
         event_target:enclave_2 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_3"
-        trigger = { 
-            NOT = { event_target:enclave_3 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_3 }
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_3 } }
         event_target:enclave_3 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_4"
-        trigger = { 
-            NOT = { event_target:enclave_4 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_4 } 
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_4 } }
         event_target:enclave_4 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_5"
-        trigger = { 
-            NOT = { event_target:enclave_5 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_5 }
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_5 } }
         event_target:enclave_5 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_6"
-        trigger = { 
-            NOT = { event_target:enclave_6 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_6 }
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_6 } }
         event_target:enclave_6 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_7"
-        trigger = { 
-            NOT = { event_target:enclave_7 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_7 }
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_7 } }
         event_target:enclave_7 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_8"
-        trigger = { 
-            NOT = { event_target:enclave_8 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_8 }
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_8 } }
         event_target:enclave_8 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_9"
-        trigger = { 
-            NOT = { event_target:enclave_9 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_9 }
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_9 } }
         event_target:enclave_9 = { save_event_target_as = target_enclave }
     }
     option = {
         name = "enclave_option_10"
-        trigger = { 
-            NOT = { event_target:enclave_10 = { is_same_value = root } }
-            can_evict_enclave = { enclave = enclave_10 }
-        }
+        trigger = { can_evict_enclave = { enclave = enclave_10 } }
         event_target:enclave_10 = { save_event_target_as = target_enclave }
     }
     option = {

@@ -57,4 +57,5 @@ def stashz(c: Context):
 
 @task 
 def deploy(c: Context):
+    """Overwrite mod folder with repo contents (reverse stash)."""
     overwrite_folder(REPO_MOD_DIR, DEPLOYED_MOD_DIR)
