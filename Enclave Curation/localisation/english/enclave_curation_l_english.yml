@@ -27,6 +27,8 @@
  # Event - Invite
  invite_enclave_TITLE: "Select enclave to invite"
  invite_enclave_DESC: "Select which enclave faction is invited to build an outpost here."
+ invited_enclave_outpost_slot_unavailable: "You've already invited this enclave to establish an outpost in your empire."
+ invited_enclave_outpost_slot_available: "You've yet to invite this enclave to establish an outpost in your empire."
  # Event - Evict
  evict_enclave_TITLE: "Select enclave to evict"
  evict_enclave_DESC: "Evict selected enclave faction from system."
